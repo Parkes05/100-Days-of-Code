@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="../static/Day 57 - Style.css">
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>My Blog</h1></div>
+    </div>
+    <div class="content">
+        <div class="card">
+            {% for i in post: %}
+                {% if i.id == 1: %}
+            <h2>{{ i.title }}</h2>
+            <p class="text">{{ i.subtitle }} </p>
+            <a href="{{ url_for('my_blog', num=1) }}">Read</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="card">
+                {% elif i.id == 2: %}
+            <h2>{{ i.title }}</h2>
+            <p class="text">{{ i.subtitle }} </p>
+            <a href="{{ url_for('my_blog', num=2) }}">Read</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="card">
+                {% elif i.id == 3: %}
+            <h2>{{ i.title }}</h2>
+            <p class="text">{{ i.subtitle }} </p>
+            {% endif %}
+            {% endfor %}
+            <a href="{{ url_for('my_blog', num=3) }}">Read</a>
+        </div>
+    </div>
+</div>
+</body>
+
+<footer>
+    <p>Made with ♥️ in London.</p>
+</footer>
+
+</html>
